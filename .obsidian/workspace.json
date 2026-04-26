@@ -4,47 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "666eae9016e3b77a",
+        "id": "64bd524b984f1768",
         "type": "tabs",
-        "dimension": 49.446202531645575,
         "children": [
           {
-            "id": "1331decebb30d5c3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "components/AttributeWithBar.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "AttributeWithBar"
-            }
-          }
-        ]
-      },
-      {
-        "id": "98c010225f8557f8",
-        "type": "tabs",
-        "dimension": 50.55379746835443,
-        "children": [
-          {
-            "id": "308d6c12ba10cf59",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hooks/useFrontmatterStateProvider.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "useFrontmatterStateProvider"
-            }
-          },
-          {
-            "id": "83fd93a3edde9475",
+            "id": "ea227cbaa6e8e6ef",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -57,8 +21,7 @@
               "title": "Test"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -233,18 +196,25 @@
       "css-editor:Open CSS editor quick switcher": false
     }
   },
-  "active": "1331decebb30d5c3",
+  "active": "ea227cbaa6e8e6ef",
   "lastOpenFiles": [
-    "Test.md",
-    "components/AttributeWithBar.md",
-    "hooks/useFrontmatterStateProvider.md",
-    "components/AttributeAplier.md",
-    "hooks",
-    "Персонажи/Клейн Моретти.md",
-    "test/components/test.jsx",
-    "components",
-    "my_react",
     "Персонажи/Горгона Шалазир.md",
+    "Test.md",
+    "temp/Spell store.base",
+    "Components/hooks/useFMState.jsx",
+    "Components/hooks/useFrontmatterState.jsx",
+    "Components/hooks",
+    "Components/lib/getSafeFMkey.js",
+    "Components/lib",
+    "Components/Widgets/AttributeWithBar.jsx",
+    "Components/Widgets",
+    "Components/useFrontmatterStateProvider.md",
+    "Components/AttributeWithBar.md",
+    "Components/AttributeAplier.md",
+    "Components/ReactComponents/AttributeWithBar.jsx",
+    "Components/ReactComponents/AttributeApplier.jsx",
+    "hooks/useFrontmatterStateProvider.md",
+    "Персонажи/Клейн Моретти.md",
     "Мастеру/Этаж 2/Локации/4_Третьи врата - пустота.md",
     "Мастеру/Этаж 2/Локации/1_Вход в пещеру.md",
     "Мастеру/Этаж 2/Локации/6_Центр пещеры.md",
@@ -253,25 +223,17 @@
     "Мастеру/Этаж 2/Локации/2_Туннель оживших теней.md",
     "Мастеру/Этаж 2/Карта.md",
     "Мастеру/Этаж 2/Локации/1_Зал пира.md",
-    "Мастеру/Этаж 2/Локации",
     "Мастеру/Этаж 1/Карта.md",
     "Мастеру/Этаж 1/Локации/7_Тронный зал.md",
-    "Мастеру/Этаж 2",
     "Мастеру/Этаж 1/Локации/2_Склад пряжи.md",
     "Мастеру/Этаж 1/Локации/6_Королевский сад.md",
     "Мастеру/Этаж 1/Локации/5_Склеп.md",
     "Мастеру/Этаж 1/Локации/1_Вестибюль.md",
     "Мастеру/Этаж 1/Локации/4_Мастерская.md",
     "Мастеру/Этаж 1/Локации/3_Комната с часами.md",
-    "Мастеру/Этаж 1",
     "Персонажи/Тима.md",
     "Персонажи/Саня.md",
-    "Способности/Очищение.md",
-    "Мастеру/Этаж 1/Локации",
-    "Снаряжение/Легкий кожаный доспех.md",
-    "Мастеру",
     "Персонажи/res/Pasted image 20260425182058.png",
-    "Персонажи/res",
     "Персонажи/res/Pasted image 20260425181630.png",
     "Pasted image 20260425181332.png"
   ]
