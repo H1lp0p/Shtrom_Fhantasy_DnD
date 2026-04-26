@@ -4,24 +4,61 @@
     "type": "split",
     "children": [
       {
-        "id": "e65ee7604b5c4de9",
+        "id": "666eae9016e3b77a",
         "type": "tabs",
+        "dimension": 49.446202531645575,
         "children": [
           {
-            "id": "9f31b3e25157f9a2",
+            "id": "1331decebb30d5c3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Персонажи/Тима.md",
+                "file": "components/AttributeWithBar.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Тима"
+              "title": "AttributeWithBar"
             }
           }
         ]
+      },
+      {
+        "id": "98c010225f8557f8",
+        "type": "tabs",
+        "dimension": 50.55379746835443,
+        "children": [
+          {
+            "id": "308d6c12ba10cf59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "hooks/useFrontmatterStateProvider.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "useFrontmatterStateProvider"
+            }
+          },
+          {
+            "id": "83fd93a3edde9475",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Test.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Test"
+            }
+          }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -78,7 +115,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 223.5
   },
   "right": {
     "id": "29771ac833768eb8",
@@ -94,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Персонажи/Тима.md",
+                "file": "test/components/TestComponent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +141,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для Тима"
+              "title": "Обратные ссылки для TestComponent"
             }
           },
           {
@@ -164,12 +201,23 @@
               "icon": "lucide-list",
               "title": "Структура Базовые механики"
             }
+          },
+          {
+            "id": "630534260d146c50",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "git-view"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 343.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -181,11 +229,22 @@
       "templates:Вставить шаблон": false,
       "command-palette:Открыть палитру команд": false,
       "bases:Создать новую базу": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "css-editor:Open CSS editor quick switcher": false
     }
   },
-  "active": "9f31b3e25157f9a2",
+  "active": "1331decebb30d5c3",
   "lastOpenFiles": [
+    "Test.md",
+    "components/AttributeWithBar.md",
+    "hooks/useFrontmatterStateProvider.md",
+    "components/AttributeAplier.md",
+    "hooks",
+    "Персонажи/Клейн Моретти.md",
+    "test/components/test.jsx",
+    "components",
+    "my_react",
+    "Персонажи/Горгона Шалазир.md",
     "Мастеру/Этаж 2/Локации/4_Третьи врата - пустота.md",
     "Мастеру/Этаж 2/Локации/1_Вход в пещеру.md",
     "Мастеру/Этаж 2/Локации/6_Центр пещеры.md",
@@ -211,19 +270,9 @@
     "Мастеру/Этаж 1/Локации",
     "Снаряжение/Легкий кожаный доспех.md",
     "Мастеру",
-    "Снаряжение/Обычная одежда.md",
-    "Персонажи/Максик.md",
-    "Без названия.md",
-    "Персонажи/Шаблон_Персонажа.md",
-    "Снаряжение/Пистолет.md",
-    "Снаряжение/Рапира.md",
     "Персонажи/res/Pasted image 20260425182058.png",
     "Персонажи/res",
     "Персонажи/res/Pasted image 20260425181630.png",
-    "Pasted image 20260425181332.png",
-    "Способности/Танк",
-    "Снаряжение",
-    "1",
-    "Способности/Зов берсерка.txt"
+    "Pasted image 20260425181332.png"
   ]
 }

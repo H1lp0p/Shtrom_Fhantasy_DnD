@@ -3,5 +3,6 @@
   "dataview",
   "obsidian-meta-bind-plugin",
   "js-engine",
-  "css-editor"
+  "css-editor",
+  "obsidian-react-components"
 ]
