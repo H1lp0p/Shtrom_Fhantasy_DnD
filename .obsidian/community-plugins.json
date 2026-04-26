@@ -2,5 +2,6 @@
   "obsidian-git",
   "dataview",
   "obsidian-meta-bind-plugin",
-  "js-engine"
+  "js-engine",
+  "css-editor"
 ]

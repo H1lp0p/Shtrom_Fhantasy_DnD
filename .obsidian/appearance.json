@@ -1,1 +1,6 @@
-{}
+{
+  "enabledCssSnippets": [
+    "dataviewjs-smaller-corner-radius",
+    "dataview-smaller-corner-rqdius"
+  ]
+}

@@ -1,0 +1,6 @@
+/* Вариант 1: Более строгий селектор для мобильных устройств */
+.markdown-reading-view .dataview.dataview-js {
+    border-radius: 0px !important;
+  border: none !important;
+  overflow: hidden !important;
+}
