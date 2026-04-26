@@ -4,5 +4,6 @@
   "livePreview": false,
   "newFileLocation": "current",
   "newLinkFormat": "relative",
-  "attachmentFolderPath": "./res"
+  "attachmentFolderPath": "./res",
+  "defaultViewMode": "preview"
 }
