@@ -1,0 +1,76 @@
+# Общие системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+
+# Obsidian рабочие файлы (не синхронизировать)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace.json.bak
+.obsidian/workspace-mobile.json.bak
+.obsidian/cache
+.obsidian/graph.json
+.obsidian/hotkeys.json
+.obsidian/browser.json
+.obsidian/starred.json  # устаревшее
+.obsidian/bookmarks.json  # новое
+.obsidian/command-palette.json
+
+# Сторонние плагины (сохраняем настройки, но не кеш)
+.obsidian/plugins/**/data.json  # пользовательские данные
+.obsidian/plugins/**/main.js    # если собираете из исходников
+.obsidian/plugins/**/styles.css
+.obsidian/plugins/**/.gitignore
+
+# Конкретные популярные плагины
+.obsidian/plugins/obsidian-text-generator/cache/
+.obsidian/plugins/obsidian-text-generator/output/
+.obsidian/plugins/dataview/cache/
+.obsidian/plugins/omnisearch/cache/
+.obsidian/plugins/better-wordnet/cache/
+.obsidian/plugins/copilot/cache/
+.obsidian/plugins/smart-connections/cache/
+
+# Мобильные особенности
+.obsidian/mobile.json
+.obsidian/mobile-workspace.json
+
+# Резервные копии (если создаются в хранилище)
+*.bak
+*.backup
+*~ 
+
+# Логи и отладочные файлы
+*.log
+.obsidian/errors.log
+.obsidian/exception.txt
+
+# Временные файлы Obsidian Sync
+.obsidian/sync.json
+.stfolder/
+.trash/
+
+# Файлы пользователей (если используете общую файловую структуру)
+*_conflict_*.md
+*.sync-conflict-*.md
+
+# Вложения (опционально — если не нужны в репозитории)
+# media/
+# attachments/
+# assets/
+
+# Скрипты (если есть свои)
+*.pyc
+__pycache__/
+venv/
+.venv/
+.env
+
+# IDE (если кто-то редактирует в VS Code и т.д.)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
