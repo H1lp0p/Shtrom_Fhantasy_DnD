@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "64bd524b984f1768",
+        "id": "fe2e258bee1e67d5",
         "type": "tabs",
         "children": [
           {
-            "id": "ea227cbaa6e8e6ef",
+            "id": "b3d1e38da0b282d0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Test.md",
+                "file": "Персонажи/Клейн Моретти.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Test"
+              "title": "Клейн Моретти"
             }
           }
         ]
@@ -196,25 +196,30 @@
       "css-editor:Open CSS editor quick switcher": false
     }
   },
-  "active": "ea227cbaa6e8e6ef",
+  "active": "b3d1e38da0b282d0",
   "lastOpenFiles": [
-    "Персонажи/Горгона Шалазир.md",
     "Test.md",
     "temp/Spell store.base",
-    "Components/hooks/useFMState.jsx",
-    "Components/hooks/useFrontmatterState.jsx",
-    "Components/hooks",
-    "Components/lib/getSafeFMkey.js",
-    "Components/lib",
-    "Components/Widgets/AttributeWithBar.jsx",
-    "Components/Widgets",
+    "Персонажи/Клейн Моретти.md",
+    "Components/ui-kit/CalculatedString.jsx",
+    "Components/widgets/PointsWidget.jsx",
+    "Components/lib/stringFormat.js",
+    "Components/widgets/HpWidget.jsx",
+    "Components/lib/calculateStat.js",
+    "Персонажи/Горгона Шалазир.md",
+    "temp/Items.base",
+    "Снаряжение/Легкий кожаный доспех.md",
+    "Снаряжение/Боевой топор.md",
+    "Снаряжение/Боевой молот.md",
+    "Снаряжение/Арбалет.md",
+    "Components/widgets/AttributeWithBar.jsx",
+    "Components/widgets",
+    "Components/ui-kit/ProgressView.jsx",
+    "Персонажи/Полина Полекарповна.md",
     "Components/useFrontmatterStateProvider.md",
     "Components/AttributeWithBar.md",
     "Components/AttributeAplier.md",
-    "Components/ReactComponents/AttributeWithBar.jsx",
-    "Components/ReactComponents/AttributeApplier.jsx",
     "hooks/useFrontmatterStateProvider.md",
-    "Персонажи/Клейн Моретти.md",
     "Мастеру/Этаж 2/Локации/4_Третьи врата - пустота.md",
     "Мастеру/Этаж 2/Локации/1_Вход в пещеру.md",
     "Мастеру/Этаж 2/Локации/6_Центр пещеры.md",
@@ -228,11 +233,6 @@
     "Мастеру/Этаж 1/Локации/2_Склад пряжи.md",
     "Мастеру/Этаж 1/Локации/6_Королевский сад.md",
     "Мастеру/Этаж 1/Локации/5_Склеп.md",
-    "Мастеру/Этаж 1/Локации/1_Вестибюль.md",
-    "Мастеру/Этаж 1/Локации/4_Мастерская.md",
-    "Мастеру/Этаж 1/Локации/3_Комната с часами.md",
-    "Персонажи/Тима.md",
-    "Персонажи/Саня.md",
     "Персонажи/res/Pasted image 20260425182058.png",
     "Персонажи/res/Pasted image 20260425181630.png",
     "Pasted image 20260425181332.png"

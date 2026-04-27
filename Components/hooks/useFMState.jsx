@@ -2,44 +2,51 @@ import { useEmeraContext } from 'emera';
 import React from 'react';
 
 const useFMState = (key, defaultValue = null) => {
-    const { frontmatter, file, app } = useEmeraContext();
+    const { frontmatter: initialFrontmatter, file, app } = useEmeraContext();
     
-    // Локальное состояние
+    // Функция для получения актуального frontmatter
+    const getCurrentFrontmatter = React.useCallback(() => {
+        if (!file || !app) return initialFrontmatter;
+        
+        // Пробуем оба способа для совместимости
+        const cache = app.metadataCache.getFileCache?.(file) || app.metadataCache.getCache?.(file);
+        return cache?.frontmatter || initialFrontmatter;
+    }, [file, app, initialFrontmatter]);
+    
     const [state, setState] = React.useState(() => {
-        const value = frontmatter?.[key];
+        const currentFm = getCurrentFrontmatter();
+        const value = currentFm?.[key];
         return value !== undefined && value !== null ? value : defaultValue;
     });
-    
-    // Подписка на изменения метаданных файла
+
+    // Функция для синхронизации
+    const syncWithFrontmatter = React.useCallback(() => {
+        const currentFm = getCurrentFrontmatter();
+        const newValue = currentFm?.[key];
+        
+        if (newValue !== undefined && newValue !== null && newValue !== state) {
+            console.log(`Syncing key "${key}": ${state} -> ${newValue}`);
+            setState(newValue);
+        }
+    }, [key, state, getCurrentFrontmatter]);
+
+    // Регулярная проверка (для ручных изменений)
     React.useEffect(() => {
         if (!file || !app) return;
         
-        // Функция, которая будет вызываться при изменении metadata
-        const handleMetadataChange = () => {
-            const newFrontmatter = app.metadataCache.getFrontmatter(file);
-            const newValue = newFrontmatter?.[key];
-            
-            if (newValue !== undefined && newValue !== null && newValue !== state) {
-                setState(newValue);
-            }
-        };
+        const interval = setInterval(() => {
+            syncWithFrontmatter();
+        }, 200);
         
-        // Подписываемся на событие изменения метаданных
-        app.metadataCache.on('changed', handleMetadataChange);
-        
-        // Отписка при размонтировании
-        return () => {
-            app.metadataCache.off('changed', handleMetadataChange);
-        };
-    }, [file, app, key, state]);
-    
+        return () => clearInterval(interval);
+    }, [file, app, syncWithFrontmatter]);
+
     const setFrontmatterState = React.useCallback(async (newValue) => {
         const valueToSet = typeof newValue === 'function' ? newValue(state) : newValue;
         
-        // Мгновенно обновляем локальное состояние
+        // Мгновенно обновляем UI
         setState(valueToSet);
         
-        // Сохраняем в frontmatter
         if (file && app) {
             try {
                 await app.fileManager.processFrontMatter(file, (fm) => {
@@ -52,12 +59,11 @@ const useFMState = (key, defaultValue = null) => {
             } catch (error) {
                 console.error(`Failed to update frontmatter key "${key}":`, error);
                 // Откат при ошибке
-                const fallbackValue = app.metadataCache.getFrontmatter(file)?.[key] ?? defaultValue;
-                setState(fallbackValue);
+                syncWithFrontmatter();
             }
         }
-    }, [key, state, file, app, defaultValue]);
-    
+    }, [key, state, file, app, syncWithFrontmatter]);
+
     return [state, setFrontmatterState];
 };
 
