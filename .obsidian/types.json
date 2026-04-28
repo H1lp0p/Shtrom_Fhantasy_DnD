@@ -3,6 +3,7 @@
     "aliases": "aliases",
     "cssclasses": "multitext",
     "tags": "tags",
-    "снаряжение_выбранное": "multitext"
+    "снаряжение_выбранное": "multitext",
+    "блок_урона": "number"
   }
 }
