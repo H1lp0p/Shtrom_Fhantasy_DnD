@@ -30,7 +30,7 @@ sp: 2
 
 Очки способностей: 
 ```react
-<CalculatedString FMKey={"sp"}/>
+<CalculatedString FMKey={"sp"} calculation={"${value} + 1"}/>
 ```
 
 ```dataview

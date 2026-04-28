@@ -9,6 +9,8 @@ import PointsWidget from "./widgets/PointsWidget.jsx";
 import AddFileToFMForm from "./widgets/AddFileToFMForm.jsx";
 import RemoveFromFMListButton from "./widgets/RemoveFromFMListButton.jsx";
 import CreateEquipmentButton from "./widgets/CreateEquipmentButton.jsx";
+import HPWidget from "./widgets/HPWidget.jsx";
+import AddSpellForm from "./widgets/AddSpellForm.jsx";
 
 function Stack(props) {
   return React.createElement(
@@ -71,4 +73,6 @@ module.exports = {
   AddFileToFMForm,
   RemoveFromFMListButton,
   CreateEquipmentButton,
+  HPWidget,
+  AddSpellForm,
 };

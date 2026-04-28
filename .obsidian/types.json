@@ -4,6 +4,8 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "снаряжение_выбранное": "multitext",
-    "блок_урона": "number"
+    "блок_урона": "number",
+    "барьер_текущее": "number",
+    "барьер_наложенное": "number"
   }
 }

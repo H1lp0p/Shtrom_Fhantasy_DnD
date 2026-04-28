@@ -1,6 +1,6 @@
 function ProgressView(props) {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", width: "100%", ...props.style }}>
       <label
         htmlFor={`progress-${props.id ?? "value"}`}
         style={{
@@ -17,7 +17,7 @@ function ProgressView(props) {
         id={`progress-${props.id ?? "value"}`}
         max={props.max}
         value={props.current}
-        style={{ height: "32px", width: "100%" }}
+        style={{ height: "32px", width: "100%"}}
       />
     </div>
   );
