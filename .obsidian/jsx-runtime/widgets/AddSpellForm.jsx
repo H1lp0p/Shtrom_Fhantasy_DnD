@@ -36,7 +36,7 @@ function AddSpellForm(props) {
 
       const selectedFile = files.filter((f) => f.name.includes(selectedItem))[0];
       
-      const ok = await confirm(`Добавить способность ${selectedFile.name}. Это будет стоить ${selectedFile.AP} ОС`)
+      const ok = await confirm(`Добавить способность ${selectedFile.name}? Это будет стоить ${selectedFile.AP} ОС`)
 
       if (ok){
 

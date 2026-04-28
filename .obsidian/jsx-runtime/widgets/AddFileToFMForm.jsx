@@ -4,8 +4,11 @@ function AddFileToFMForm(props) {
   const [files, setFiles] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [selectedItem, setSelectedItem] = React.useState("");
+
   const [selectedFiles, setSelectedFiles] = useFrontmatterState(listFMKey, []);
+  
   const dataview = useDataviewApi();
+  const confirm = useConfirmModal();
 
   React.useEffect(() => {
     if (!dataview) {
@@ -23,14 +26,25 @@ function AddFileToFMForm(props) {
     setLoading(false);
   }, [directory, listFMKey, dataview]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!selectedItem) return;
-    setSelectedFiles((prev) =>
-      prev.includes(selectedItem) ? prev : [...prev, selectedItem]
-    );
-    setSelectedItem("");
+
+    const selectedFile = files.filter((f) => f.name.includes(selectedItem))[0];
+      
+    const ok = await confirm(`Добавить предмет ${selectedFile.name}?`)
+
+    if (ok) {
+      setSelectedFiles((prev) =>
+        prev.includes(selectedItem) ? prev : [...prev, selectedItem]
+      ); 
+    }
+    setSelectedItem(""); 
   };
+
+  const handleUpdate = (value) => {
+    setSelectedItem(value)
+}
 
   if (loading) return <div>Loading files from {directory}...</div>;
   if (!files.length) return <div>No files found in "{directory}"</div>;
@@ -45,10 +59,15 @@ function AddFileToFMForm(props) {
         list={`file-options-${directory}`}
         placeholder="Select a file..."
         value={selectedItem}
-        onChange={(e) => setSelectedItem(e.target.value)}
+        onChange={(e) => handleUpdate(e.target.value)}
         style={{ flex: 1 }}
       />
-      <button type="submit">Добавить</button>
+      <button 
+        type="submit" 
+      >
+        Добавить
+      </button>
+
       <datalist id={`file-options-${directory}`}>
         {files
           .filter((file) => !selectedFiles.includes(file.name))
