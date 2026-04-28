@@ -25,3 +25,7 @@ sp: 2
 ```
 
 Очки способностей: `emera:<CalculatedString FMKey={"sp"}/>`
+
+```emera
+<DataviewItemList directory={"Способности"}/>
+```

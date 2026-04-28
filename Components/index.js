@@ -8,6 +8,7 @@ export { default as useFMState } from './hooks/useFMState'
 export { default as AttributeApplier } from "./ui-kit/AttributeApplier";
 export {default as ProgressView} from './ui-kit/ProgressView'
 export {default as CalculatedString} from './ui-kit/CalculatedString'
+export {default as DataviewItemList} from './ui-kit/DataviewItemList'
 
 //WIDGETS
 

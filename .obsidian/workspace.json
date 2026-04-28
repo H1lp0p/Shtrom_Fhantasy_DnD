@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Персонажи/Клейн Моретти.md",
+                "file": "Test.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Клейн Моретти"
+              "title": "Test"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 223.5
+    "width": 231.5
   },
   "right": {
     "id": "29771ac833768eb8",
@@ -198,23 +198,23 @@
   },
   "active": "b3d1e38da0b282d0",
   "lastOpenFiles": [
+    "temp/Items.base",
     "Test.md",
-    "temp/Spell store.base",
+    "Components/ui-kit/DataviewItemList.jsx",
     "Персонажи/Клейн Моретти.md",
+    "temp/Spell store.base",
     "Components/ui-kit/CalculatedString.jsx",
     "Components/widgets/PointsWidget.jsx",
     "Components/lib/stringFormat.js",
     "Components/widgets/HpWidget.jsx",
     "Components/lib/calculateStat.js",
     "Персонажи/Горгона Шалазир.md",
-    "temp/Items.base",
     "Снаряжение/Легкий кожаный доспех.md",
     "Снаряжение/Боевой топор.md",
     "Снаряжение/Боевой молот.md",
     "Снаряжение/Арбалет.md",
     "Components/widgets/AttributeWithBar.jsx",
     "Components/widgets",
-    "Components/ui-kit/ProgressView.jsx",
     "Персонажи/Полина Полекарповна.md",
     "Components/useFrontmatterStateProvider.md",
     "Components/AttributeWithBar.md",
