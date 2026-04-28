@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Мастеру/Этаж 2/Локации/4_Третьи врата - пустота.md",
-                "mode": "source",
+                "file": "Персонажи/Клейн Моретти.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "4_Третьи врата - пустота"
+              "title": "Клейн Моретти"
             }
           }
         ]
@@ -174,6 +174,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "css-editor:Open CSS editor quick switcher": false,
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
       "canvas:Создать новый холст": false,
@@ -184,15 +185,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3596a0b2218a1b50",
+  "active": "9f31b3e25157f9a2",
   "lastOpenFiles": [
+    "Мастеру/Этаж 2/Локации/4_Третьи врата - пустота.md",
     "Персонажи/Полина Полекарповна.md",
     "Персонажи/Клейн Моретти.md",
     "Персонажи/Горгона Шалазир.md",
     "temp/Spell store.base",
     "temp/Items.base",
     "temp",
-    "Мастеру/Этаж 2/Локации/4_Третьи врата - пустота.md",
     "Мастеру/Этаж 2/Локации/1_Вход в пещеру.md",
     "Мастеру/Этаж 2/Локации/6_Центр пещеры.md",
     "Мастеру/Этаж 2/Локации/5_Зал забытых даров.md",
