@@ -1,14 +1,21 @@
+const defaultProps = {
+  directory: "",
+  listFMKey: "",
+  paletteTitle: "",
+  palettePlaceholder: "",
+  style: {},
+}
+
 function AddFileToFMForm(props) {
   const directory = props.directory ?? "Characters";
   const listFMKey = props.listFMKey ?? "selected_file";
   const [files, setFiles] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
-  const [selectedItem, setSelectedItem] = React.useState("");
 
   const [selectedFiles, setSelectedFiles] = useFrontmatterState(listFMKey, []);
   
   const dataview = useDataviewApi();
-  const confirm = useConfirmModal();
+  const palette = useCommandPalette();
 
   React.useEffect(() => {
     if (!dataview) {
@@ -26,56 +33,35 @@ function AddFileToFMForm(props) {
     setLoading(false);
   }, [directory, listFMKey, dataview]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!selectedItem) return;
+  const handleAdd = async () => {
+    
+    const result = await palette({
+      title: props.paletteTitle ?? "Выберите компонент",
+      placeholder: props.palettePlaceholder ?? "Введите название...",
+      actions: files
+          .filter((file) => !selectedFiles.includes(file.name))
+          .map((file) => {
+            return {
+              id: file.name,
+              label: file.name,
+            }})
+    })
 
-    const selectedFile = files.filter((f) => f.name.includes(selectedItem))[0];
-      
-    const ok = await confirm(`Добавить предмет ${selectedFile.name}?`)
-
-    if (ok) {
-      setSelectedFiles((prev) =>
-        prev.includes(selectedItem) ? prev : [...prev, selectedItem]
-      ); 
+    if (result) {
+      setSelectedFiles(prev => [...prev, result])
     }
-    setSelectedItem(""); 
   };
 
-  const handleUpdate = (value) => {
-    setSelectedItem(value)
-}
-
-  if (loading) return <div>Loading files from {directory}...</div>;
-  if (!files.length) return <div>No files found in "{directory}"</div>;
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "flex", flexDirection: "row", gap: "8px", width: "100%" }}
-    >
-      <input
-        type="text"
-        list={`file-options-${directory}`}
-        placeholder="Select a file..."
-        value={selectedItem}
-        onChange={(e) => handleUpdate(e.target.value)}
-        style={{ flex: 1 }}
-      />
       <button 
-        type="submit" 
+        onClick={() => {handleAdd()}}
+        style={{...props.style}}
+        disabled={loading}
       >
-        Добавить
+        {(!loading && files.length) && "Добавить"}
+        {loading && "Загрузка..."}
+        {!files.length && "Не удалось загрузить файлы :("}
       </button>
-
-      <datalist id={`file-options-${directory}`}>
-        {files
-          .filter((file) => !selectedFiles.includes(file.name))
-          .map((file, index) => (
-            <option key={index} value={file.name}></option>
-          ))}
-      </datalist>
-    </form>
   );
 }
 

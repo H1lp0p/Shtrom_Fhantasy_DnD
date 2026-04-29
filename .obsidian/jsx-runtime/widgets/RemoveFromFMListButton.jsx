@@ -45,7 +45,7 @@ function RemoveFromFMListButton(props) {
   };
 
   return (
-    <button style={{width: "100%", marginTop: 16}} className="mod-cta" onClick={removeValue} disabled={!fmKey}>
+    <button style={{...props.style}} className="mod-cta" onClick={removeValue} disabled={!fmKey}>
       {title}
     </button>
   );

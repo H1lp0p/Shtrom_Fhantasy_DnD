@@ -24,7 +24,7 @@
   - `useFileText`
   - `useCreateFile`
   - `useCreateFileFromTemplate`
-  - `useModal`, `useAlertModal`, `useConfirmModal`, `usePromptModal`, `useBottomSheet`, `useFormModal`
+  - `useModal`, `useAlertModal`, `useConfirmModal`, `usePromptModal`, `useBottomSheet`, `useCommandPalette`, `useFormModal`
 
 ## Контекст `ctx`
 
@@ -41,6 +41,7 @@
 - `ctx.modal.confirm(message)`
 - `ctx.modal.prompt(options)`
 - `ctx.modal.bottomSheet(options)`
+- `ctx.modal.commandPalette(options)`
 - `ctx.modal.form(options)`
 
 ## Справочник по хукам
@@ -129,9 +130,9 @@ const createFromTemplate = useCreateFileFromTemplate((vars) => ({
 
 - Единый объект:
   - `const modal = useModal()`
-  - `modal.alert(...)`, `modal.confirm(...)`, `modal.prompt(...)`, `modal.bottomSheet(...)`, `modal.form(...)`
+  - `modal.alert(...)`, `modal.confirm(...)`, `modal.prompt(...)`, `modal.bottomSheet(...)`, `modal.commandPalette(...)`, `modal.form(...)`
 - Раздельные хуки:
-  - `useAlertModal()`, `useConfirmModal()`, `usePromptModal()`, `useBottomSheet()`, `useFormModal()`
+  - `useAlertModal()`, `useConfirmModal()`, `usePromptModal()`, `useBottomSheet()`, `useCommandPalette()`, `useFormModal()`
 
 ### `alert(message)`
 
@@ -210,13 +211,18 @@ return <button onClick={rename}>Prompt</button>
   - `message?: string` — подсказка
   - `actions: Array<{ id: string; label: string }>` — действия
   - `cancelText?: string` — текст отмены
+  - `variant?: "menu" | "datalist"` — режим выбора (`menu` по умолчанию)
+  - `placeholder?: string` — плейсхолдер для `variant: "datalist"`
+  - `defaultValue?: string` — стартовое значение (`id` или `label`) для `variant: "datalist"`
+  - `submitText?: string` — текст кнопки подтверждения для `variant: "datalist"`
 - возвращает:
   - `Promise<string | null>`
 - поведение:
   - выбранный `id`
   - `null` при cancel/close
 - примечание:
-  - реализовано через нативный `Menu` Obsidian (mobile-friendly action sheet)
+  - `variant: "menu"` использует нативный `Menu` Obsidian (mobile-friendly action sheet)
+  - `variant: "datalist"` открывает модалку c `input + datalist` для подсказок и поиска
 
 ```react-component
 const bottomSheet = useBottomSheet()
@@ -235,6 +241,66 @@ async function pick() {
 }
 
 return <button onClick={pick}>Bottom sheet</button>
+```
+
+Пример с подсказками (`input + datalist`):
+
+```react-component
+const bottomSheet = useBottomSheet()
+
+async function pickWithHints() {
+  const selected = await bottomSheet({
+    title: "Выбери предмет",
+    message: "Начни вводить название",
+    variant: "datalist",
+    placeholder: "Например: Кинжал",
+    submitText: "Выбрать",
+    cancelText: "Отмена",
+    actions: [
+      { id: "dagger", label: "Кинжал" },
+      { id: "shortsword", label: "Короткий меч" },
+      { id: "longbow", label: "Длинный лук" },
+    ],
+  })
+  // selected: "dagger" | "shortsword" | "longbow" | null
+}
+
+return <button onClick={pickWithHints}>Bottom sheet datalist</button>
+```
+
+### `commandPalette(options)`
+
+Нативная модалка выбора в стиле Command Palette (`Ctrl+P`) на базе `FuzzySuggestModal`.
+
+- вход:
+  - `title?: string` — заголовок модалки
+  - `placeholder?: string` — текст в строке поиска
+  - `emptyStateText?: string` — текст пустого результата
+  - `actions: Array<{ id: string; label: string; description?: string }>`
+- возвращает:
+  - `Promise<string | null>`
+- поведение:
+  - возвращает `id` выбранного элемента
+  - `null` при `Esc`/закрытии
+
+```react-component
+const pickCommand = useCommandPalette()
+
+async function openPalette() {
+  const selected = await pickCommand({
+    title: "Действия профиля",
+    placeholder: "Начни вводить...",
+    emptyStateText: "Ничего не найдено",
+    actions: [
+      { id: "add-tag", label: "Add tag", description: "Добавить тег в profile.tags" },
+      { id: "toggle-published", label: "Toggle published" },
+      { id: "reset-visits", label: "Reset visits to zero" },
+    ],
+  })
+  // selected: "add-tag" | "toggle-published" | "reset-visits" | null
+}
+
+return <button onClick={openPalette}>Open command palette</button>
 ```
 
 ### `form(options)`

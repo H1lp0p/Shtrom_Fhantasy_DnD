@@ -3,13 +3,13 @@ function AddSpellForm(props) {
     const listFMKey = props.listFMKey ?? "способности_выбранные";
     const [files, setFiles] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
-    const [selectedItem, setSelectedItem] = React.useState("");
     const [active, setActive] = React.useState(false);
     const [selectedFiles, setSelectedFiles] = useFrontmatterState(listFMKey, []);
 
     const [currentAP, setAP] = useFrontmatterState("очки_способностей_всего", 0);
 
     const dataview = useDataviewApi();
+    const palette = useCommandPalette();
     const confirm = useConfirmModal();
     const alert = useAlertModal();
   
@@ -30,67 +30,48 @@ function AddSpellForm(props) {
       setLoading(false);
     }, [directory, listFMKey, dataview]);
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      if (!selectedItem) return;
+    const handleAdd = async () => {      
+      const result = await palette({
+        title: `Добавить способность? У вас сейчас [${currentAP}] ОС`,
+        placeholder: "Выберите способность...",
+        actions: files
+          .filter((file) => !selectedFiles.includes(file.name))
+          .map((file) => {
+            return {
+              id: file.name,
+              label: `${file.name} - ${file.AP} ОС`,
+            }
+          })
+      });
 
-      const selectedFile = files.filter((f) => f.name.includes(selectedItem))[0];
       
-      const ok = await confirm(`Добавить способность ${selectedFile.name}? Это будет стоить ${selectedFile.AP} ОС`)
+      if (result) {
+        const file = files.find((f) => f.name === result)
 
-      if (ok){
+        const ok = await confirm(`Добавить способность [${file.name}] стоимостью ${file.AP}?`)
 
-        if (selectedFile.AP > currentAP) {
-            setSelectedItem("");
-            alert("Недостаточно OC");
-            return
+        if (ok) {
+          if (currentAP < file.AP){
+            alert("недостаточно ОС!")
+            return;
           }
-
-        setAP(prev => prev - selectedFile.AP);
-        setSelectedFiles((prev) =>
-            prev.includes(selectedItem) ? prev : [...prev, selectedItem]
-        );
-        setSelectedItem("");
+          setAP(prev => prev - file.AP)
+          setSelectedFiles(prev => [...prev, result])
+        }
       }
 
     };
-
-    const handleUpdate = (value) => {
-        setSelectedItem(value)
-        setActive(!(files.filter(f => f.name === selectedItem).length > 0))
-    }
-    
-    if (loading) return <div>Loading files from {directory}...</div>;
-    if (!files.length) return <div>No files found in "{directory}"</div>;
   
     return (
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "row", gap: "8px", width: "100%" }}
-      >
-        <input
-          type="text"
-          list={`file-options-${directory}`}
-          placeholder="Select a file..."
-          value={selectedItem}
-          onChange={(e) => handleUpdate(e.target.value)}
-          style={{ flex: 1 }}
-        />
-        <button 
-            type="submit"
-            disabled={!active}
-        >
-            Добавить
-        </button>
-
-        <datalist id={`file-options-${directory}`}>
-          {files
-            .filter((file) => !selectedFiles.includes(file.name))
-            .map((file, index) => (
-              <option key={index} value={file.name}></option>
-            ))}
-        </datalist>
-      </form>
+      <button 
+      onClick={() => {handleAdd()}}
+      style={{...props.style}}
+      disabled={loading}
+    >
+      {(!loading && files.length) && "Добавить"}
+      {loading && "Загрузка..."}
+      {!files.length && "Не удалось загрузить файлы :("}
+    </button>
     );
   }
   
