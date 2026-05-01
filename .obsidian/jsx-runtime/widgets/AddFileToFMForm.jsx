@@ -48,7 +48,7 @@ function AddFileToFMForm(props) {
     })
 
     if (result) {
-      setSelectedFiles(prev => [...prev, result])
+      setSelectedFiles(prev => (prev) ? [...prev, result] : [result])
     }
   };
 

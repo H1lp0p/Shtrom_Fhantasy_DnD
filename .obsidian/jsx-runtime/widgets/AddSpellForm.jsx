@@ -56,7 +56,7 @@ function AddSpellForm(props) {
             return;
           }
           setAP(prev => prev - file.AP)
-          setSelectedFiles(prev => [...prev, result])
+          setSelectedFiles(prev => (prev) ? [...prev, result] : [result])
         }
       }
 
