@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"b67db5f45a3758d9","type":"text","text":"Библиотека","x":-420,"y":-140,"width":140,"height":60},
+		{"id":"1576a1020f084912","type":"text","text":"Секретная комната","x":-239,"y":0,"width":125,"height":60},
+		{"id":"3518d0f1104f80c8","type":"text","text":"Храм","x":-226,"y":-140,"width":100,"height":60},
+		{"id":"c5ab5c3dbcc3e10d","type":"text","text":"Комната крови","x":-238,"y":-280,"width":125,"height":60},
+		{"id":"58e15ac3cd0da81e","type":"text","text":"Комната Чешуи","x":-40,"y":-60,"width":125,"height":60},
+		{"id":"738b3afe17e1a620","type":"text","text":"Комната клыка","x":-420,"y":-60,"width":125,"height":60},
+		{"id":"8a8d0f518d889326","type":"text","text":"Комната пламени","x":-40,"y":-220,"width":125,"height":60},
+		{"id":"0ede0df6469ebd8a","type":"text","text":"Комната саке","x":-420,"y":-220,"width":125,"height":60},
+		{"id":"b39b7247d2272e7d","x":-60,"y":-140,"width":145,"height":60,"type":"text","text":"Жертвенный зал"}
+	],
+	"edges":[
+		{"id":"1e1cefbfe0b07f05","fromNode":"3518d0f1104f80c8","fromSide":"top","toNode":"1576a1020f084912","toSide":"top"},
+		{"id":"7abeada4d86d890c","fromNode":"3518d0f1104f80c8","fromSide":"left","toNode":"b67db5f45a3758d9","toSide":"right"},
+		{"id":"b0a9969e6c558552","fromNode":"3518d0f1104f80c8","fromSide":"top","toNode":"c5ab5c3dbcc3e10d","toSide":"bottom"},
+		{"id":"14a8b1219bd87028","fromNode":"3518d0f1104f80c8","fromSide":"right","toNode":"8a8d0f518d889326","toSide":"left"},
+		{"id":"b90c24ac295135c6","fromNode":"3518d0f1104f80c8","fromSide":"left","toNode":"738b3afe17e1a620","toSide":"right"},
+		{"id":"5cd7940176c3a9ec","fromNode":"3518d0f1104f80c8","fromSide":"right","toNode":"58e15ac3cd0da81e","toSide":"left"},
+		{"id":"6483e3f58fcb62f3","fromNode":"3518d0f1104f80c8","fromSide":"left","toNode":"0ede0df6469ebd8a","toSide":"right"},
+		{"id":"d3eae2fd21c8a54a","fromNode":"3518d0f1104f80c8","fromSide":"right","toNode":"b39b7247d2272e7d","toSide":"left"}
+	]
+}

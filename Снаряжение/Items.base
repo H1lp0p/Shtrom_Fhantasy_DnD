@@ -1,0 +1,21 @@
+properties:
+  note.Описание:
+    displayName: описание
+views:
+  - type: cards
+    name: Таблица
+    filters:
+      and:
+        - file.inFolder("Снаряжение")
+        - Уникальное.isEmpty()
+    order:
+      - file.name
+      - дистанция
+      - категория
+      - руки
+      - свойства
+      - тип
+      - урон
+      - бонус_кб
+      - бонус_атаки
+      - Описание

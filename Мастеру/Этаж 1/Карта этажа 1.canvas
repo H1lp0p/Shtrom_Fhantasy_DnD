@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"94dbce0121e04407","x":-800,"y":-216,"width":129,"height":50,"type":"text","text":"Вестибюль"},
+		{"id":"7593e198b4da1de0","x":-320,"y":-358,"width":250,"height":60,"type":"text","text":"Комната с часами"},
+		{"id":"1e60b01a46cef711","x":-621,"y":-358,"width":250,"height":60,"type":"text","text":"Склад пряжи"},
+		{"id":"e25332adedb6ebc9","x":-621,"y":-87,"width":250,"height":60,"type":"text","text":"Мастерская"},
+		{"id":"7e929085aaacb98c","x":-320,"y":-87,"width":250,"height":60,"type":"text","text":"Склеп"},
+		{"id":"4e5102a94fda8242","x":-621,"y":-221,"width":250,"height":60,"type":"text","text":"Королевский сад"},
+		{"id":"ac6b1a108b036db8","x":-320,"y":-221,"width":250,"height":60,"type":"text","text":"Тронный зал"}
+	],
+	"edges":[
+		{"id":"ced4c5009eebb333","fromNode":"94dbce0121e04407","fromSide":"bottom","toNode":"e25332adedb6ebc9","toSide":"top"},
+		{"id":"5f1d0bbb74e714f3","fromNode":"94dbce0121e04407","fromSide":"right","toNode":"4e5102a94fda8242","toSide":"left"},
+		{"id":"0845c93120015077","fromNode":"94dbce0121e04407","fromSide":"top","toNode":"1e60b01a46cef711","toSide":"bottom"},
+		{"id":"f584f5e7a7bfb3d2","fromNode":"1e60b01a46cef711","fromSide":"right","toNode":"7593e198b4da1de0","toSide":"left"},
+		{"id":"96ca0145d16ad042","fromNode":"e25332adedb6ebc9","fromSide":"right","toNode":"7e929085aaacb98c","toSide":"left"},
+		{"id":"bb9c11cf1e125bbe","fromNode":"4e5102a94fda8242","fromSide":"right","toNode":"ac6b1a108b036db8","toSide":"left"}
+	]
+}

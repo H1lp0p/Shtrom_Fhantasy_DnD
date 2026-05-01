@@ -1,0 +1,19 @@
+formulas:
+  Без названия: ""
+views:
+  - type: cards
+    name: Таблица
+    filters:
+      and:
+        - file.inFolder("Способности")
+    order:
+      - file.name
+      - мана
+      - стоимость_ос
+      - тип
+      - тип_урона
+      - требования
+      - цель
+      - действие
+      - Описание
+    cardSize: 160
