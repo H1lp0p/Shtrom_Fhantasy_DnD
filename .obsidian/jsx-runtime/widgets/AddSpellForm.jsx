@@ -35,7 +35,7 @@ function AddSpellForm(props) {
         title: `Добавить способность? У вас сейчас [${currentAP}] ОС`,
         placeholder: "Выберите способность...",
         actions: files
-          .filter((file) => !selectedFiles.includes(file.name))
+          .filter((file) => (!selectedFiles || !selectedFiles.includes(file.name)) )
           .map((file) => {
             return {
               id: file.name,
@@ -56,7 +56,7 @@ function AddSpellForm(props) {
             return;
           }
           setAP(prev => prev - file.AP)
-          setSelectedFiles(prev => [...prev, result])
+          setSelectedFiles(prev => (prev) ? [...prev, result] : [result])
         }
       }
 

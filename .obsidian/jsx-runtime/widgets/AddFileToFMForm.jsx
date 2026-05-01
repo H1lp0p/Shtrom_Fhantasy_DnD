@@ -16,6 +16,7 @@ function AddFileToFMForm(props) {
   
   const dataview = useDataviewApi();
   const palette = useCommandPalette();
+  const alert = useAlertModal();
 
   React.useEffect(() => {
     if (!dataview) {
@@ -34,12 +35,11 @@ function AddFileToFMForm(props) {
   }, [directory, listFMKey, dataview]);
 
   const handleAdd = async () => {
-    
     const result = await palette({
       title: props.paletteTitle ?? "Выберите компонент",
       placeholder: props.palettePlaceholder ?? "Введите название...",
       actions: files
-          .filter((file) => !selectedFiles.includes(file.name))
+          .filter((file) => (!selectedFiles || !selectedFiles.includes(file.name)) )
           .map((file) => {
             return {
               id: file.name,
@@ -48,7 +48,7 @@ function AddFileToFMForm(props) {
     })
 
     if (result) {
-      setSelectedFiles(prev => [...prev, result])
+      setSelectedFiles(prev => (prev) ? [...prev, result] : [result])
     }
   };
 
