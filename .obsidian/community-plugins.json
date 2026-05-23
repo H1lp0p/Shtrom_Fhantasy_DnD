@@ -1,8 +1,8 @@
 [
-  "obsidian-git",
   "dataview",
   "obsidian-meta-bind-plugin",
   "js-engine",
   "css-editor",
-  "obsidian-jsx"
+  "obsidian-jsx",
+  "obsidian-git"
 ]
